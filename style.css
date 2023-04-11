@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ;
+}
+
+.form-label {
+  font-size: 20px;
+}
+
+label {
+  background-color: beige;
+  padding: 10px;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  background: #f2f2f2;
+}
+ul li {
+  display: inline-block;
+}
+
+#buttons {
+  display: flex;
+
+  padding: 20px;
+
+  align-content: space-between;
+
+  flex-direction: column;
+
+  max-width: 200px;
+}
+
+.buttonClass {
+  margin-bottom: 10px;
+  width: 200px;
+  font-size: 30px;
+}
+
+.card {
+  display: flex;
+  width: 20rem;
+  padding: 10px;
+  align-content: space-between;
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+#submit-button {
+  margin-top: 10px;
+}
