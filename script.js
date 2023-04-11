@@ -57,3 +57,47 @@ function currentWeather() {
   storeCities();
   //  printCities();
 }
+
+function forecastWeather() {
+  var query2Url =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    city +
+    "&units=metric&appid=" +
+    apiKey +
+    "&cnt=5";
+
+  console.log(query2Url);
+
+  fetch(query2Url)
+    .then(function (response) {
+      console.log(response);
+      return response.json();
+    })
+
+    .then(function (data) {
+      console.log(data);
+
+      for (var i = 0; i < data.cnt; i++) {
+        var unorderedList = document.createElement("ul");
+        var listCity = document.createElement("li");
+
+        var listTemp = document.createElement("li");
+        var listElement = data.list[i];
+        var listHumidity = document.createElement("li");
+        var listWind = document.createElement("li");
+
+        listCity.textContent = listElement.dt_txt.slice(0, 10);
+        unorderedList.appendChild(listCity);
+        forecastContainer.append(unorderedList);
+
+        listTemp.innerHTML =
+          "Temp:" + Math.round(listElement.main.temp) + `&#186;`;
+        forecastContainer.appendChild(listTemp);
+        //console.log("Temp: " + listElement.main.temp);
+        listHumidity.textContent = "Humidity:" + listElement.main.humidity;
+        forecastContainer.appendChild(listHumidity);
+        listWind.textContent = "Wind Speed:" + listElement.wind.speed;
+        forecastContainer.appendChild(listWind);
+      }
+    });
+}
