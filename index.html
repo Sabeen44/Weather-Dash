@@ -28,12 +28,13 @@
     <!--heading -->
     <header class="p-4 text-center text-white bg-primary">
       <h1>Weather Dashboard</h1>
-      <p>Rain or Shine</p>
+
       <p class="lead"></p>
     </header>
     <!-- containers -->
     <main class="flex-row justify-space-between">
-      <div class="col-12 col-md-4">
+      <div class"row">
+      <div class="col">
         <div class="card">
           <h4 class="card-header text-uppercase">Search for a city</h4>
           <form id="search-city" class="card-body">
@@ -57,19 +58,20 @@
         </div>
       </div>
 
-      <div class="card col-12 col-md-6">
+      <div class="col">
         <h2 class="subtitles">Current Weather</h2>
         <h3 id="currentDay"></h3>
 
         <div id="current-weather" class="list-group"></div>
         <div id="current-weather" class="list-group"></div>
       </div>
-      <div class="card flex col-12 col-md-4">
+      <div class="card flex col">
         <h2>5-Day Forecast</h2>
         <div id="forecast-weather">
           <div id="forecast-list"></div>
         </div>
       </div>
+    </div>
     </main>
 
     <div id="buttons">

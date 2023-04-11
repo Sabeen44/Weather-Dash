@@ -6,6 +6,15 @@ In this app, the user enters the name of a city in the search field to display t
 
 The app makes use of third-party APIs to access data by making requests with specific parameters to a URL.
 
+## Technologies Used
+
+HTML
+CSS
+Javascript
+Jquery
+DOM
+Web API
+
 ## Code Snippet
 
 ...
@@ -30,13 +39,15 @@ return response.json();
       cityName.textContent = data.name;
       currentContainer.appendChild(cityName);})
 
-In the blove snippet, a query is being made to the open weather API using the fetch method then after recieving the data, element <h2> is created and appended to a <div> dynamically to display the searched city name.
+In the blove snippet, a query is being made to the open weather API using the fetch method then after recieving the data, element h2 is created and appended to a div dynamically to display the searched city name.
 
 ## Learning
 
 Retrieving data from another application's API is a powerful tool for developing your apps.
 
 ## Deployed Link
+
+https://sabeen44.github.io/Weather-Dash/
 
 ## Code By
 

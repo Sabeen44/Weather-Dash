@@ -25,8 +25,6 @@ var apiKey = "c2183fb4c5521d3be3937d6deaa528c5";
 var todayDate = dayjs().format("dddd, MMM D YYYY");
 $("#currentDay").text(todayDate);
 
-//
-
 var formSubmitHandler = function (event) {
   event.preventDefault();
 
@@ -98,6 +96,16 @@ function currentWeather() {
   }
   storeCities();
   //  printCities();
+}
+
+function printCities() {
+  for (var i = 0; i < cities.length; i++) {
+    //var storedCity = cities[i];
+    var btn = document.createElement("button");
+    btn.textContent = cities[i];
+    btn.className = "buttonClass";
+    cityButtons.appendChild(btn);
+  }
 }
 
 function forecastWeather() {

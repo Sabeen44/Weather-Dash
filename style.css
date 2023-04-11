@@ -59,3 +59,8 @@ ul li {
 #submit-button {
   margin-top: 10px;
 }
+
+#forecast-list {
+  display: flex;
+  flex-direction: row;
+}
