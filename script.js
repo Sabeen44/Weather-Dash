@@ -101,3 +101,24 @@ function forecastWeather() {
       }
     });
 }
+
+function weatherButton() {
+  currentWeather();
+  forecastWeather();
+}
+
+submitButton.addEventListener("click", weatherForm);
+
+formSubmit.addEventListener("submit", formSubmitHandler);
+
+cityButtons.addEventListener("click", (event) => {
+  if (event.target.className === "buttonClass") {
+    city = event.target.textContent;
+    weatherButton();
+
+    console.log("Click");
+  }
+});
+
+initCities();
+printCities();
