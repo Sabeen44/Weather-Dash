@@ -6,6 +6,48 @@ var forecastList = document.getElementById("forecast-list");
 var forecastContainer = document.getElementById("forecast-weather");
 var cityButtons = document.getElementById("buttons");
 
+var cities = [];
+
+function initCities() {
+  var storedCities = JSON.parse(localStorage.getItem("citylist"));
+
+  if (storedCities !== null) {
+    cities = storedCities;
+  }
+}
+
+function storeCities() {
+  localStorage.setItem("citylist", JSON.stringify(cities));
+}
+
+var apiKey = "c2183fb4c5521d3be3937d6deaa528c5";
+
+var todayDate = dayjs().format("dddd, MMM D YYYY");
+$("#currentDay").text(todayDate);
+
+//
+
+var formSubmitHandler = function (event) {
+  event.preventDefault();
+
+  if (city) {
+    weatherForm;
+    currentContainer.textContent = "";
+    forecastContainer.textContent = "";
+    formInput.value = "";
+  } else {
+    alert("Please enter a city");
+  }
+};
+
+var city;
+
+function weatherForm() {
+  city = formInput.value;
+  currentWeather();
+  forecastWeather();
+}
+
 function currentWeather() {
   //city = formInput.value;
 
