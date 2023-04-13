@@ -32,46 +32,46 @@
       <p class="lead"></p>
     </header>
     <!-- containers -->
-    <main class="flex-row justify-space-between">
-      <div class"row">
-      <div class="col">
-        <div class="card">
-          <h4 class="card-header text-uppercase">Search for a city</h4>
-          <form id="search-city" class="card-body">
-            <label class="form-label" for="city-name">Enter City Name:</label>
+    <main class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h4 class="card-header text-uppercase">Search for a city</h4>
+            <form id="search-city" class="card-body">
+              <label class="form-label" for="city-name">Enter City Name:</label>
 
-            <input
-              id="city-name"
-              type="text"
-              class="form-input"
-              placeholder="City name..."
-            />
+              <input
+                id="city-name"
+                type="text"
+                class="form-input"
+                placeholder="City name..."
+              />
 
-            <button
-              id="submit-button"
-              class="btn btn-primary btn-lg"
-              type="button"
-            >
-              Submit
-            </button>
-          </form>
+              <button
+                id="submit-button"
+                class="btn btn-primary btn-lg"
+                type="button"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="col">
+          <h2 class="subtitles">Current Weather</h2>
+          <h3 id="currentDay"></h3>
+
+          <div id="current-weather" class="list-group"></div>
+          <div id="current-weather" class="list-group"></div>
+        </div>
+        <div class="col card flex col">
+          <h2>5-Day Forecast</h2>
+          <div id="forecast-weather">
+            <div id="forecast-list"></div>
+          </div>
         </div>
       </div>
-
-      <div class="col">
-        <h2 class="subtitles">Current Weather</h2>
-        <h3 id="currentDay"></h3>
-
-        <div id="current-weather" class="list-group"></div>
-        <div id="current-weather" class="list-group"></div>
-      </div>
-      <div class="card flex col">
-        <h2>5-Day Forecast</h2>
-        <div id="forecast-weather">
-          <div id="forecast-list"></div>
-        </div>
-      </div>
-    </div>
     </main>
 
     <div id="buttons">

@@ -69,11 +69,15 @@ function currentWeather() {
       var cityName = document.createElement("h2");
       cityName.textContent = data.name;
 
-      var iconEl = document.createElement("p");
+      var iconEl = document.createElement("img");
       var icon = data.weather[0].icon;
-      //var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
-      var iconUrl = "https://openweathermap.org/img/wn/" + icon;
-      iconEl.html = "<img src='" + iconUrl + ".png'>";
+      iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@4x.png";
+      iconEl.style.width = "100px";
+      iconEl.style.height = "100px";
+      //var iconUrl =
+      //iconEl.attr("src", iconUrl);
+      //var iconUrl = "https://openweathermap.org/img/w/" + icon;
+      //iconEl.html = "<img src='" + iconUrl + ".png'>";
 
       var temp = document.createElement("h4");
       temp.innerHTML = "Temp:" + Math.round(data.main.temp) + `&#186;`;
@@ -150,6 +154,7 @@ function forecastWeather() {
         forecastContainer.appendChild(listWind);
       }
     });
+  //for (var i = 0; i < data.cnt; i++){
 }
 
 function weatherButton() {
