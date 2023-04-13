@@ -51,7 +51,7 @@ https://sabeen44.github.io/Weather-Dash/
 
 ## Screen Print
 
-<img src="images/screenshot.png" width="350" title="hover text">
+<img src="./images/screenshot.png" width="350" title="hover text">
 
 ## Code By
 
