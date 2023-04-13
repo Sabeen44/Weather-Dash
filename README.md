@@ -39,7 +39,7 @@ return response.json();
       cityName.textContent = data.name;
       currentContainer.appendChild(cityName);})
 
-In the blove snippet, a query is being made to the open weather API using the fetch method then after recieving the data, element h2 is created and appended to a div dynamically to display the searched city name.
+In the above snippet, a query is being made to the open weather API using the fetch method then after recieving the data, element h2 is created and appended to a div dynamically to display the searched city name.
 
 ## Learning
 
@@ -51,7 +51,7 @@ https://sabeen44.github.io/Weather-Dash/
 
 ## Screen Print
 
-<img src="screenshot.png" width="350" title="hover text">
+<img src="images/screenshot.png" width="350" title="hover text">
 
 ## Code By
 
