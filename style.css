@@ -5,6 +5,10 @@
   font-family: ;
 }
 
+header {
+  background-color: gray;
+}
+
 .form-label {
   font-size: 20px;
 }
@@ -23,6 +27,7 @@ ul {
   padding: 0;
   list-style: none;
   background: #f2f2f2;
+  font-weight: bold;
 }
 ul li {
   display: inline-block;
@@ -63,4 +68,8 @@ ul li {
 #forecast-list {
   display: flex;
   flex-direction: row;
+}
+
+.container {
+  background-color: azure;
 }

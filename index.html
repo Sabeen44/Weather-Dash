@@ -26,7 +26,7 @@
 
   <body class="min-100-vh flex column">
     <!--heading -->
-    <header class="p-4 text-center text-white bg-primary">
+    <header class="p-4 text-center text-white">
       <h1>Weather Dashboard</h1>
 
       <p class="lead"></p>
@@ -55,28 +55,41 @@
                 Submit
               </button>
             </form>
+            
           </div>
+          <div class="row">
+            <div class="col">
+              <div class="card">
+            
+            <h2 class="card-header text-uppercase">History</h2>
+              <div id="buttons">
+              </div>
+              </div>
+            </div>
+            </div>
         </div>
-
         <div class="col">
-          <h2 class="subtitles">Current Weather</h2>
+          <div class="card">
+          <h2 class="card-header text-uppercase">Current Weather</h2>
           <h3 id="currentDay"></h3>
 
           <div id="current-weather" class="list-group"></div>
-          <div id="current-weather" class="list-group"></div>
-        </div>
-        <div class="col card flex col">
-          <h2>5-Day Forecast</h2>
-          <div id="forecast-weather">
-            <div id="forecast-list"></div>
-          </div>
+          <!-- <div id="current-weather" class="list-group"></div> -->
         </div>
       </div>
+
+      <div class="col">
+        <div class="card">
+      <h2 class="card-header text-uppercase">5-Day Forecast</h2>
+      <div id="forecast-weather">
+        <div id="forecast-list">
+      </div>
+    </div>
+    </div>
+      </div>
+
     </main>
 
-    <div id="buttons">
-      <h2>History</h2>
-    </div>
     <!-- <p>City Count: <span id="count">0</span></p> -->
     <!-- <h3 id="city-list"></h3> -->
 
@@ -89,3 +102,6 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+

@@ -49,6 +49,10 @@ Retrieving data from another application's API is a powerful tool for developing
 
 https://sabeen44.github.io/Weather-Dash/
 
+## Screen Print
+
+<img src="screenshot.png" width="350" title="hover text">
+
 ## Code By
 
 Sabeen Chaudhry

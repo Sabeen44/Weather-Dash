@@ -6,6 +6,10 @@ var forecastList = document.getElementById("forecast-list");
 var forecastContainer = document.getElementById("forecast-weather");
 var cityButtons = document.getElementById("buttons");
 
+var apiKey = "c2183fb4c5521d3be3937d6deaa528c5";
+
+var city;
+
 var cities = [];
 
 function initCities() {
@@ -19,8 +23,6 @@ function initCities() {
 function storeCities() {
   localStorage.setItem("citylist", JSON.stringify(cities));
 }
-
-var apiKey = "c2183fb4c5521d3be3937d6deaa528c5";
 
 var todayDate = dayjs().format("dddd, MMM D YYYY");
 $("#currentDay").text(todayDate);
@@ -38,17 +40,7 @@ var formSubmitHandler = function (event) {
   }
 };
 
-var city;
-
-function weatherForm() {
-  city = formInput.value;
-  currentWeather();
-  forecastWeather();
-}
-
 function currentWeather() {
-  //city = formInput.value;
-
   var queryUrl =
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     city +
@@ -74,11 +66,6 @@ function currentWeather() {
       iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@4x.png";
       iconEl.style.width = "100px";
       iconEl.style.height = "100px";
-      //var iconUrl =
-      //iconEl.attr("src", iconUrl);
-      //var iconUrl = "https://openweathermap.org/img/w/" + icon;
-      //iconEl.html = "<img src='" + iconUrl + ".png'>";
-
       var temp = document.createElement("h4");
       temp.innerHTML = "Temp:" + Math.round(data.main.temp) + `&#186;`;
 
@@ -88,13 +75,15 @@ function currentWeather() {
       var wind = document.createElement("h4");
       wind.textContent = "Wind Speed: " + data.wind.speed + " mph";
 
+      currentContainer.innerHTML = "";
       currentContainer.appendChild(cityName);
       currentContainer.appendChild(iconEl);
       currentContainer.appendChild(temp);
       currentContainer.appendChild(humidity);
       currentContainer.appendChild(wind);
     });
-  var exists = cities.includes(city);
+
+  var exists = cities.includes(city.toUpperCase());
   if (!exists) {
     cities.push(city.toUpperCase());
   }
@@ -131,30 +120,49 @@ function forecastWeather() {
     .then(function (data) {
       console.log(data);
 
+      forecastContainer.innerHTML = "";
+
       for (var i = 0; i < data.cnt; i++) {
+        var listElement = data.list[i];
         var unorderedList = document.createElement("ul");
-        var listCity = document.createElement("li");
+        var listDate = document.createElement("li");
 
         var listTemp = document.createElement("li");
-        var listElement = data.list[i];
+
         var listHumidity = document.createElement("li");
         var listWind = document.createElement("li");
+        var iconEl = document.createElement("img");
 
-        listCity.textContent = listElement.dt_txt.slice(0, 10);
-        unorderedList.appendChild(listCity);
-        forecastContainer.append(unorderedList);
-
+        listDate.textContent = listElement.dt_txt.slice(0, 10);
         listTemp.innerHTML =
           "Temp:" + Math.round(listElement.main.temp) + `&#186;`;
-        forecastContainer.appendChild(listTemp);
-        //console.log("Temp: " + listElement.main.temp);
+
         listHumidity.textContent = "Humidity:" + listElement.main.humidity;
-        forecastContainer.appendChild(listHumidity);
+
         listWind.textContent = "Wind Speed:" + listElement.wind.speed;
+
+        forecastContainer.append(unorderedList);
+
+        var icon = listElement.weather[0].icon;
+        iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        iconEl.style.width = "100px";
+        iconEl.style.height = "100px";
+        unorderedList.appendChild(listDate);
+        forecastContainer.appendChild(iconEl);
+
+        forecastContainer.appendChild(listTemp);
+
+        forecastContainer.appendChild(listHumidity);
+
         forecastContainer.appendChild(listWind);
       }
     });
-  //for (var i = 0; i < data.cnt; i++){
+}
+
+function weatherForm() {
+  city = formInput.value;
+  currentWeather();
+  forecastWeather();
 }
 
 function weatherButton() {
@@ -162,9 +170,15 @@ function weatherButton() {
   forecastWeather();
 }
 
+function clearForm() {
+  formInput.value = "";
+}
+
 submitButton.addEventListener("click", weatherForm);
 
 formSubmit.addEventListener("submit", formSubmitHandler);
+
+formInput.addEventListener("click", clearForm);
 
 cityButtons.addEventListener("click", (event) => {
   if (event.target.className === "buttonClass") {
