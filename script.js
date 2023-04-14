@@ -42,7 +42,7 @@ var formSubmitHandler = function (event) {
 
 function currentWeather() {
   var queryUrl =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     city +
     "&units=metric&appid=" +
     apiKey;
