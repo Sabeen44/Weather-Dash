@@ -63,7 +63,7 @@ function currentWeather() {
 
       var iconEl = document.createElement("img");
       var icon = data.weather[0].icon;
-      iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@4x.png";
+      iconEl.src = "https://openweathermap.org/img/wn/" + icon + "@4x.png";
       iconEl.style.width = "100px";
       iconEl.style.height = "100px";
       var temp = document.createElement("h4");
@@ -144,7 +144,7 @@ function forecastWeather() {
         forecastContainer.append(unorderedList);
 
         var icon = listElement.weather[0].icon;
-        iconEl.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        iconEl.src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
         iconEl.style.width = "100px";
         iconEl.style.height = "100px";
         unorderedList.appendChild(listDate);
